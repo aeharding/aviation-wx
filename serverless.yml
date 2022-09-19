@@ -1,0 +1,19 @@
+service: aviation-wx
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+functions:
+  query:
+    handler: handler.query
+    memorySize: 256
+    events:
+      - httpApi:
+          method: GET
+          path: /api/aviationalerts
+
+plugins:
+  - serverless-esbuild
