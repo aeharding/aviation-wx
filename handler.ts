@@ -69,7 +69,7 @@ async function getAll() {
   const [sigmet, outlook, airmet0, airmet1, airmet2, airmet3, cwa] =
     await Promise.all([
       axios.get<FeatureCollection>(
-        "https://www.aviationweather.gov/cgi-bin/json/SigmetJSON.php",
+        "https://d3akp0hquhcjdh.cloudfront.net/cgi-bin/json/SigmetJSON.php",
         {
           params: {
             date: formatDate(currentDate),
@@ -77,7 +77,7 @@ async function getAll() {
         }
       ),
       axios.get<FeatureCollection>(
-        "https://www.aviationweather.gov/cgi-bin/json/SigmetJSON.php",
+        "https://d3akp0hquhcjdh.cloudfront.net/cgi-bin/json/SigmetJSON.php",
         {
           params: {
             date: formatDate(outlookDate),
@@ -86,7 +86,7 @@ async function getAll() {
         }
       ),
       axios.get<FeatureCollection>(
-        "https://www.aviationweather.gov/cgi-bin/json/GairmetJSON.php",
+        "https://d3akp0hquhcjdh.cloudfront.net/cgi-bin/json/GairmetJSON.php",
         {
           params: {
             level: "sfc",
@@ -96,7 +96,7 @@ async function getAll() {
         }
       ),
       axios.get<FeatureCollection>(
-        "https://www.aviationweather.gov/cgi-bin/json/GairmetJSON.php",
+        "https://d3akp0hquhcjdh.cloudfront.net/cgi-bin/json/GairmetJSON.php",
         {
           params: {
             level: "sfc",
@@ -106,7 +106,7 @@ async function getAll() {
         }
       ),
       axios.get<FeatureCollection>(
-        "https://www.aviationweather.gov/cgi-bin/json/GairmetJSON.php",
+        "https://d3akp0hquhcjdh.cloudfront.net/cgi-bin/json/GairmetJSON.php",
         {
           params: {
             level: "sfc",
@@ -116,7 +116,7 @@ async function getAll() {
         }
       ),
       axios.get<FeatureCollection>(
-        "https://www.aviationweather.gov/cgi-bin/json/GairmetJSON.php",
+        "https://d3akp0hquhcjdh.cloudfront.net/cgi-bin/json/GairmetJSON.php",
         {
           params: {
             level: "sfc",
@@ -126,7 +126,7 @@ async function getAll() {
         }
       ),
       axios.get<FeatureCollection>(
-        "https://www.aviationweather.gov/cgi-bin/json/CwaJSON.php"
+        "https://d3akp0hquhcjdh.cloudfront.net/cgi-bin/json/CwaJSON.php"
       ),
     ]);
 
