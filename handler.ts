@@ -65,6 +65,10 @@ async function getAll() {
     startOfDay(now),
     9 + now.getUTCHours() - (now.getUTCHours() % 3)
   );
+  const airmet4Date = addHours(
+    startOfDay(now),
+    12 + now.getUTCHours() - (now.getUTCHours() % 3)
+  );
 
   const [sigmet, outlook, airmet0, airmet1, airmet2, airmet3, cwa] =
     await Promise.all([
@@ -122,6 +126,16 @@ async function getAll() {
             level: "sfc",
             fore: -1,
             date: airmet3Date,
+          },
+        }
+      ),
+      axios.get<FeatureCollection>(
+        "https://d3akp0hquhcjdh.cloudfront.net/cgi-bin/json/GairmetJSON.php",
+        {
+          params: {
+            level: "sfc",
+            fore: -1,
+            date: airmet4Date,
           },
         }
       ),
