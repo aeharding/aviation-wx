@@ -2,7 +2,7 @@ import booleanIntersects from "@turf/boolean-intersects";
 import { point, FeatureCollection } from "@turf/helpers";
 import axios from "axios";
 import { addHours, startOfDay, startOfHour } from "date-fns";
-import uniqBy from "lodash";
+import { uniqBy } from "lodash";
 
 export async function query(
   event: AWSLambda.APIGatewayEvent
