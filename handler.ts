@@ -70,7 +70,7 @@ async function getAll() {
     12 + now.getUTCHours() - (now.getUTCHours() % 3)
   );
 
-  const [sigmet, outlook, airmet0, airmet1, airmet2, airmet3, cwa] =
+  const [sigmet, outlook, airmet0, airmet1, airmet2, airmet3, airmet4, cwa] =
     await Promise.all([
       axios.get<FeatureCollection>(
         "https://d3akp0hquhcjdh.cloudfront.net/cgi-bin/json/SigmetJSON.php",
@@ -154,6 +154,7 @@ async function getAll() {
         ...airmet1.data.features,
         ...airmet2.data.features,
         ...airmet3.data.features,
+        ...airmet4.data.features,
         ...cwa.data.features,
       ],
       "id"
